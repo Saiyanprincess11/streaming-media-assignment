@@ -1,0 +1,26 @@
+{
+  "name": "streaming-media-assignment",
+  "version": "1.0.0",
+  "description": "Streams basic video and audio content",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests Complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saiyanprincess11/streaming-media-assignment.git"
+  },
+  "author": "Princess-Osaani Hornage",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Saiyanprincess11/streaming-media-assignment/issues"
+  },
+  "homepage": "https://github.com/Saiyanprincess11/streaming-media-assignment#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
