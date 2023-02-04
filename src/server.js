@@ -14,16 +14,20 @@ const onRequest = (request, response) => {
       htmlHandler.getIndex(request, response);
       break;
     case '/page2':
-      htmlHandler.getIndex(request, response); 
-      break; 
+      mediaHandler.loadMedia('bling.mp3', 'audio/mpeg', request, response);
+      break;
     case '/page3':
-      htmlHandler.getIndex(request, response); 
-      break; 
+      mediaHandler.loadMedia('bird.mp4', 'video/mp4', request, response); 
+      break;
     case '/party.mp4':
-      mediaHandler.getParty(request, response);
+      mediaHandler.loadMedia('party.mp4', 'video/mp4', request, response);
       break;
     case '/bird.mp4':
-      mediaHandler.getBird(request, response); 
+      mediaHandler.loadMedia('bird.mp4', 'video/mp4', request, response);
+      break;
+    case '/bling.mp3':
+      mediaHandler.loadMedia('bling.mp3', 'audio/mpeg', request, response);
+      break;
     default:
       htmlHandler.getIndex(request, response);
       break;

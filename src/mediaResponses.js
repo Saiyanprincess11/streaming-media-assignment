@@ -1,10 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const getParty = (request, response) => {
-const file = path.resolve(__dirname, '../client/party.mp4');
+const loadMedia = (name, contentType, request, response) => {
+  const file = path.resolve(__dirname, `../client/${name}`);
 
-  // Only sends valid bytes requested
   fs.stat(file, (err, stats) => {
     if (err) {
       if (err.code === 'ENOENT') {
@@ -37,7 +36,7 @@ const file = path.resolve(__dirname, '../client/party.mp4');
       'Content-Range': `bytes ${start}-${end}/${total}`,
       'Accept-Ranges': 'bytes',
       'Content-Length': chunksize,
-      'Content-Type': 'video/mp4',
+      'Content-Type': `${contentType}`,
     });
 
     // Creates a file stream
@@ -55,4 +54,4 @@ const file = path.resolve(__dirname, '../client/party.mp4');
   });
 };
 
-module.exports.getParty = getParty;
+module.exports.loadMedia = loadMedia;
